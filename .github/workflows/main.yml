@@ -4,20 +4,14 @@ on:
   push:
     branches:
       - main
-   pull:
-    branches:    
-      - main 
-    workflow_dispatch  
+   pull_request:
+   workflow_dispatch : 
 
 jobs:
   build:
-      echo "Build Sucessfully"
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v2
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
+      - uses: actions/checkout@v2
+      - run: echo "Build successfull"
         
